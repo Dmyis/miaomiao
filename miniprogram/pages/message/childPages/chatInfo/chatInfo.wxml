@@ -1,0 +1,17 @@
+<!--miniprogram/pages/message/childPages/chatInfo/chatInfi.wxml-->
+<view class="chat-group-info">
+  <view class="group-users">
+    <view class="group-user-item" wx:for="{{members}}">
+      <image mode="aspectFill" class="user-photo" src="/images/user/user-unlogin.png"></image>
+      <view class="user-nickName">昵称昵称昵称昵称昵称</view>
+    </view>
+  </view>
+
+  <clickBar>
+    <text slot="title">群聊名称</text>
+  </clickBar>
+  <view class="group-operate">
+    <view class="operate empty">清空聊天记录</view>
+    <view class="operate delete">删除并退出</view>
+  </view>
+</view>

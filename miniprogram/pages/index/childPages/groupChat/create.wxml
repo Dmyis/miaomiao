@@ -1,0 +1,9 @@
+<!--miniprogram/pages/index/childPages/groupChat/create.wxml-->
+<view>
+  <friendList class="friendList" showSelect  bindchooes="handleSelect"/>
+  <view class="create-box">
+    <button bindtap="confirm" disabled="{{!member}}" class="create-btn" size="mini" type="primary">
+      完成<text hidden="{{!member}}">({{member}})</text>
+    </button>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "friendList":"../../../../components/friendList/friendList"
+  },
+  "navigationBarTitleText": "发起群聊"
+}

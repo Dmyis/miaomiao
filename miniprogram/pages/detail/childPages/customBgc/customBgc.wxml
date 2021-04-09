@@ -1,0 +1,13 @@
+<!--miniprogram/pages/detail/childPages/customBgc/customBgc.wxml-->
+<view class="custom">
+  <clickBar isRitIcon bindtap="album">
+    <text slot="title">从相册选择</text>
+  </clickBar>
+  <clickBar isRitIcon bindtap="takePhoto">
+    <text slot="title">拍一张</text>
+  </clickBar>
+
+  <view >
+    <image></image>
+  </view>
+</view>

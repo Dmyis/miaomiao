@@ -1,0 +1,32 @@
+<!--components/search/search.wxml-->
+<view class="container {{isSearch?'container-s':''}}">
+  <view class="search">
+    <view class="search-text {{isSearch?'border':''}}" bindtap="handleSearch">
+      <text class="iconfont icon-search"></text>
+      <input confirm-type="search" bindconfirm="handleConfirm" class="ipt" bindinput="handleIpt" type="text"
+        value="{{iptVal}}" placeholder="搜索猫星人" />
+      <text bindtap="exIptVal" class="quxiao" hidden="{{!iptVal}}">×</text>
+    </view>
+    <view bindtap="handleCancel" hidden="{{!isSearch}}" class="search-cancel">取消</view>
+  </view>
+
+  <view class="search-history">
+    <text>历史搜索</text>
+    <text bindtap="deletehistory" class="iconfont icon-icon-shanchu"></text>
+  </view>
+
+  <view class="search-history-btn">
+    <text bindtap="handleHistorySearch" data-val="{{item}}" class="text" wx:for="{{searchHistory}}"
+      wx:key="index">{{item}}</text>
+  </view>
+  <view wx:if="{{noUser}}" class="no-user">喵星暂时查不到此人</view>
+  <block wx:else>
+    <navigator url="{{'/pages/detail/detail?userid='+item._id}}" open-type="navigate" wx:for="{{searchList}}"
+      wx:key="index">
+      <clickBar>
+        <image class="userPhoto" src="{{item.userPhoto}}" slot="icon"></image>
+        <text slot="title">{{item.nickName}}</text>
+      </clickBar>
+    </navigator>
+  </block>
+</view>

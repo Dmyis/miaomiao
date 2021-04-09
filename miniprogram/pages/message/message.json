@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "click-bar":"/components/clickBar/clickBar",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
+    "mp-badge": "weui-miniprogram/badge/badge"
+  },
+  "navigationBarTitleText": "信息"  
+}

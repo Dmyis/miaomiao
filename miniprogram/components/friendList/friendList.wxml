@@ -1,0 +1,7 @@
+<!--components/friendList/friendList.wxml-->
+<mp-index-list class="friendList" 
+  showSelect="{{showSelect}}" 
+  list="{{friendList}}" 
+
+  bindchoose="onChoose">
+</mp-index-list>

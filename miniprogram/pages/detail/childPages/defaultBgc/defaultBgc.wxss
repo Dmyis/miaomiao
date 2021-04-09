@@ -1,0 +1,61 @@
+/* miniprogram/pages/detail/childPages/defaultBgc/defaultBgc.wxss */
+@import "../../../../style/iconfont/iconfont.wxss";
+
+page {
+  background-color: #937bf5;
+}
+
+.defaultbgc {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.img-box {
+  width: 50%;
+  height: 250rpx;
+  box-sizing: border-box;
+}
+
+.img-box:nth-child(2n+1) {
+  padding-right: 15rpx;
+  margin-bottom: 15rpx;
+}
+
+.img {
+  height: 250rpx;
+  width: 100%;
+}
+
+.seeImgBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+.icon-quxiao {
+  color: #fff;
+  position: absolute;
+  left: 50rpx;
+  top: 50rpx;
+}
+
+.currentImg {
+  width: 100%;
+}
+
+.confirm {
+  background-color: rgb(7, 193, 96);
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 25rpx;
+}

@@ -1,0 +1,4 @@
+<view class="map-box">
+  <map scale="14" markers="{{markers}}" bindmarkertap="markertap" show-location latitude="{{latitude}}" longitude="{{longitude}}" id="map"></map>
+  <cover-image bindtap="clickcontrol" class="local" src="../../images/local.png"></cover-image>
+</view>

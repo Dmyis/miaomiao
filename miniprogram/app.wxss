@@ -1,0 +1,40 @@
+/**app.wxss**/
+
+@import "./style/iconfont/iconfont.wxss";
+
+page {
+  background-color: #EDEDED;
+  position: relative;
+  z-index: 9999998;
+}
+
+.navbar
+.weui-navigation-bar__center{
+  font-size: 24rpx;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-icon-bianji {
+  color: #438CFF;
+}
+
+.icon-tongxunlu {
+  color: #22C67F;
+}
+
+.icon-geren {
+  color: #F7B52C;
+}
+
+.icon-shezhi {
+  color: #937bf5;
+}
+
+.icon-youjiantou {
+  margin-left: 10rpx;
+  color: #777;
+}

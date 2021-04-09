@@ -1,0 +1,28 @@
+/* components/clickBar/clickBar.wxss */
+@import "../../style/iconfont/iconfont.wxss";
+.barSty{
+  padding: 0 25rpx;
+  background-color: #ffff;
+}
+.icon-youjiantou{
+  margin-left: 10rpx;
+  color: #777;
+}
+.bar-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx dotted #d1d1d1;
+  padding: 20rpx 0;
+}
+.content{
+  color: #777;
+}
+.bar-left{
+  display: flex;
+  align-items: center;
+}
+.bar-right{
+  display: flex;
+  align-items: center;
+}

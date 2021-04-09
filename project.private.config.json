@@ -1,0 +1,91 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "附近",
+          "pathName": "pages/near/near",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "我的",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "编辑",
+          "pathName": "pages/user/childPages/editUserInfo/editUserInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "详情",
+          "pathName": "pages/detail/detail",
+          "query": "userid=28ee4e3e601107810140a31f7fe98b6c",
+          "scene": null
+        },
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "userid=ce805e785ffdb0ab0423f09372a9b3fd",
+          "scene": null
+        },
+        {
+          "name": "pages/user/childPages/editUserInfo/editUserInfo",
+          "pathName": "pages/user/childPages/editUserInfo/editUserInfo",
+          "query": "userid=28ee4e3e601107810140a31f7fe98b6c",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/childPages/customBgc/customBgc",
+          "pathName": "pages/detail/childPages/customBgc/customBgc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/childPages/defaultBgc/defaultBgc",
+          "pathName": "pages/detail/childPages/defaultBgc/defaultBgc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/childPages/friendList/friendList",
+          "pathName": "pages/user/childPages/friendList/friendList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/im/room/room",
+          "pathName": "pages/im/room/room",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mask":"/components/maskz/mask",
+    "clickBar":"/components/clickBar/clickBar"
+  },
+  "navigationBarTitleText": "我的"
+}

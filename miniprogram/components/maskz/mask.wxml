@@ -1,0 +1,9 @@
+<!--components/mask/mask.wxml-->
+<view class="box {{isShow?'':'hide'}}">
+  <view class="boxModel">
+    <view bindtap="handleClose" class="iconfont icon-quxiao quxiao"></view>
+    <view class="content">
+      <slot></slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/near/near",
+    "pages/message/message",
+    "pages/user/user",
+    "pages/im/room/room",
+    "pages/user/childPages/editUserInfo/editUserInfo",
+    "pages/user/childPages/friendList/friendList",
+    "pages/user/childPages/editUserInfo/childPages/editPage/editPage",
+    "pages/detail/detail",
+    "pages/detail/childPages/seeInfo/seeInfo",
+    "pages/user/childPages/setting/setting",
+    "pages/detail/childPages/customBgc/customBgc",
+    "pages/detail/childPages/defaultBgc/defaultBgc",
+    "pages/message/childPages/praise/praise",
+    "pages/message/childPages/newFriend/newFriend",
+    "pages/index/childPages/groupChat/create",
+    "pages/message/childPages/chatInfo/chatInfo"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#937bf5",
+    "navigationBarTitleText": "喵星",
+    "navigationBarTextStyle": "white"
+  },
+  "useExtendedLib": {
+    "weui": true
+  },
+  "tabBar": {
+    "color": "#b4b5b6",
+    "selectedColor": "#937bf5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/tabbar/index.png",
+        "selectedIconPath": "images/tabbar/index_active.png"
+      },
+      {
+        "pagePath": "pages/near/near",
+        "text": "附近",
+        "iconPath": "images/tabbar/nearby.png",
+        "selectedIconPath": "images/tabbar/nearby_active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/tabbar/message.png",
+        "selectedIconPath": "images/tabbar/message_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tabbar/my.png",
+        "selectedIconPath": "images/tabbar/my_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于设置所在地"
+    }
+  }
+}

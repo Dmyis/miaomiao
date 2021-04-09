@@ -1,0 +1,82 @@
+<!--miniprogram/pages/user/childPages/editUserInfo/editUserInfo.wxml-->
+<view class="edit">
+  <view class="edit-content">
+    <view class="edit-photo">
+      <view class="photoBox">
+        <image src="{{userPhoto}}" mode="aspectFill" bindtap="handleBrowse" data-url="{{userPhoto}}"></image>
+        <text bindtap="changePhoto">更换头像</text>
+      </view>
+    </view>
+    <view class="edit-userInfo">
+      <clickBar content="{{nickName}}" bindtap="editInfo" data-name="名字" data-ipt="{{nickName}}">
+        <text slot="title">名字</text>
+        <text>{{nickName}}</text>
+      </clickBar>
+      <view class="edit-userInfo-item">
+        <text>性别</text>
+        <view class="userInfo-content">
+          <picker bindchange="bindPickerChange" range="{{['男','女']}}">
+            <text>{{sex}}</text>
+            <text class="iconfont icon-youjiantou"></text>
+          </picker>
+        </view>
+      </view>
+      <view class="edit-userInfo-item">
+        <text>生日</text>
+        <view class="userInfo-content">
+          <picker mode="date" value="{{birthday}}" start="1980-1-1" end="{{newDate}}" bindchange="bindDateChange">
+            <text>{{birthday}}</text>
+            <text class="iconfont icon-youjiantou"></text>
+          </picker>
+        </view>
+      </view>
+      <clickBar content="{{age}}">
+        <text slot="title">年龄<text class="remind">根据生日判断</text></text>
+      </clickBar>
+      <clickBar content="{{constellation}}">
+        <text slot="title">星座<text class="remind">根据生日判断</text></text>
+      </clickBar>
+      <clickBar content="{{signature}}" bindtap="editInfo" data-name="个性签名" data-ipt="{{signature}}">
+        <text slot="title">个性签名</text>
+      </clickBar>
+      <clickBar content="{{phoneNumber}}"  bindtap="editInfo" data-name="电话号码" data-ipt="{{phoneNumber}}">
+        <text slot="title">电话号码</text>
+      </clickBar>
+      <clickBar content="{{weixinNumber}}" bindtap="editInfo" data-name="微信号" data-ipt="{{weixinNumber}}">
+        <text slot="title">微信号</text>
+      </clickBar>
+      <clickBar content="{{region[0]}}-{{region[1]}}-{{region[2]}}" bindtap="editInfo" data-name="所在地" data-ipt="{{region}}">
+        <text slot="title">所在地</text>
+      </clickBar>
+      <clickBar content="{{mailbox}}"  bindtap="editInfo" data-name="邮箱" data-ipt="{{mailbox}}">
+        <text slot="title">邮箱</text>
+      </clickBar>
+    </view>
+  </view>
+
+
+  <view class="edit-model {{modelIsShow?'show-edit-model':''}}">
+    <view class="edit-model-head">
+      <text class="exit" bindtap="exitModel">取消</text>
+      <text class="center">{{editCurrentInfo}}</text>
+      <button bindtap="confirmInfo" size="mini" type="primary" disabled="{{disabled}}" class="fix">完成</button>
+    </view>
+    <view class="edit-model-ipt" wx:if="{{editCurrentInfo!=='所在地'}}">
+      <input id="editIpt" bindfocus="iptFocus" bindinput="changeIpt" type="text" value="{{iptVal}}" />
+    </view>
+    <block wx:else>
+      <view bindtap="handleLocation" class="edit-userInfo-item">
+        使用当前位置
+        <image wx:if="{{regionIsLoding}}" class="loging" src="/images/loding2.gif"></image>
+      </view>
+      <view class="edit-userInfo-item">
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          选择地区
+        </picker>
+        <view class="editRegion" wx:if="{{region[2]}}">{{region[0]}}-{{region[1]}}-{{region[2]}}</view>
+      </view>
+
+    </block>
+
+  </view>
+</view>

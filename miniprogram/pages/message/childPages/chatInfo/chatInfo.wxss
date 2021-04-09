@@ -1,0 +1,39 @@
+/* miniprogram/pages/message/childPages/chatInfo/chatInfi.wxss */
+.group-users{
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+}
+.group-user-item{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-photo{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+.user-nickName{
+  width: 80rpx;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #333;
+  font-size: 22rpx;
+}
+.group-operate{
+  margin-top: 20rpx;
+}
+.operate{
+  background-color: #fff;
+  padding: 20rpx 0;
+  text-align: center;
+  color: rgb(236, 62, 62);
+  margin-bottom: 2rpx;
+}

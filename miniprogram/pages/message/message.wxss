@@ -1,0 +1,120 @@
+/* miniprogram/pages/message/message.wxss */
+.msg-fun-icon {
+  font-size: 33rpx;
+  color: #fff;
+  background-color: #f58220;
+  border-radius: 10rpx;
+  padding: 0 12rpx;
+  margin-right: 20rpx;
+}
+
+.unread {
+  background-color: #c11;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rpx;
+  height: 30rpx;
+  padding: 2rpx;
+}
+
+.msgUnread .weui-slideview__btn {
+  background-color: #666;
+  font-size: 25rpx;
+}
+
+.noDisplay .weui-slideview__btn {
+  background-color: orange;
+  font-size: 25rpx;
+}
+
+.delete .weui-slideview__btn {
+  font-size: 25rpx;
+}
+
+.icon-xihuan {
+  background-color: #f391a9;
+}
+
+.icon-thumbup-fill {
+  background-color: #1d953f;
+}
+
+.msg-item {
+  height: 100rpx;
+  padding: 10rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.msg-image-box {
+  position: relative;
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #eee;
+  border-radius: 10rpx;
+}
+
+.msg-image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+
+.msg-small-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rpx 0 0 2rpx;
+}
+
+.groupOne {
+  height: 37rpx;
+  width: 37rpx;
+  margin:0 2rpx 2rpx 0;
+  vertical-align: top;
+}
+.groupTwo{
+  height: 23rpx;
+  width: 23rpx;
+  margin:0 2rpx 2rpx 0;
+  vertical-align: top;
+}
+
+.msg-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.msg-content-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.msg-title {
+  font-size: 33rpx;
+  padding-bottom: 5rpx;
+}
+
+.msg-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.msg-text {
+  font-size: 26rpx;
+  color: #999;
+  width: 550rpx;
+  max-width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}

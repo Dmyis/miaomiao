@@ -1,0 +1,38 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view class="user">
+  <view class="user-info">
+    <image src="{{userPhoto}}" mode="aspectFill"></image>
+    <text wx:if="{{logged}}">欢迎您：{{nickName}}</text>
+    <button disabled="{{disabled}}" wx:else open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+  <view wx:if="{{logged}}" class="user-list">
+    <navigator url="./childPages/editUserInfo/editUserInfo" open-type="navigate">
+      <clickBar isRitIcon="true">
+        <text slot="icon" class="iconfont icon-icon-bianji userPageIcon"></text>
+        <text slot="title">编辑个人信息</text>
+      </clickBar>
+    </navigator>
+    <navigator url="./childPages/friendList/friendList" open-type="navigate">
+      <clickBar>
+        <text slot="icon" class="iconfont icon-tongxunlu userPageIcon"></text>
+        <text slot="title">好友列表</text>
+      </clickBar>
+    </navigator>
+    <navigator url='../detail/detail?userid={{id}}' open-type="navigate">
+      <clickBar>
+        <text slot="icon" class="iconfont icon-geren userPageIcon"></text>
+        <text slot="title">个人主页</text>
+      </clickBar>
+    </navigator>
+    <navigator url="./childPages/setting/setting" open-type="navigate">
+      <clickBar>
+        <text slot="icon" class="iconfont icon-shezhi userPageIcon"></text>
+        <text slot="title">设置</text>
+      </clickBar>
+    </navigator>
+  </view>
+  <mask isShow="{{maskIsShow}}">
+    信息为系统默认，可以去编辑个人信息
+  </mask>
+
+</view>

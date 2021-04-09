@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "clickBar":"/components/clickBar/clickBar"
+    }
+}

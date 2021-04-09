@@ -1,0 +1,7 @@
+var unitFomat = function(number){
+  if(number >=1000){
+    number =(number/1000).toFixed(1) + 'k'
+  }
+  return number
+}
+module.exports.unitFomat = unitFomat;

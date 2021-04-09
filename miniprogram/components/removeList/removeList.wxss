@@ -1,0 +1,63 @@
+/* components/removeList/removeList.wxss */
+.area {
+  width: 100%;
+  height: 100rpx;
+  margin-bottom: 20rpx;  
+  position: relative;
+  overflow: hidden;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 100rpx);
+  height: 100rpx;
+  position: absolute;
+  left: 100rpx;
+  top: -2rpx;
+  background-color: #eee;
+  z-index: 2;
+}
+.view-content{
+  margin-left: 20rpx;
+  flex: 10;
+}
+.isagree{
+  flex: 2;
+  margin-right: 10rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius:30rpx;
+  background-color: #006030;
+}
+.agree{
+  font-size: 24rpx;
+  flex: 2;
+  margin-right: 10rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  border-radius:20%;
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.delete {
+  height: 100rpx;
+  width: 100rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

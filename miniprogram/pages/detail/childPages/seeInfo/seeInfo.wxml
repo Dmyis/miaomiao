@@ -1,0 +1,69 @@
+<!--miniprogram/pages/detail/childPages/seeInfo/seeInfo.wxml-->
+<wxs src="../../../../utils/handleBirthdays.wxs" module="m3"></wxs>
+<view class="info">
+  <view class="info-item">
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>姓名</text>
+        </view>
+        <text>{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>性别</text>
+        </view>
+        <text>{{userInfo.sex}}</text>
+      </view>
+    </view>
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>年龄</text>
+        </view>
+        <text>{{userInfo.age}}</text>
+      </view>
+    </view>
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>生日</text>
+        </view>
+        <text wx:if="{{userInfo.birthday}}">{{m3.birthday(userInfo.birthday)}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="info-item">
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>所在地</text>
+        </view>
+        <text>{{userInfo.region[0]}}</text>
+        <text>{{userInfo.region[0]==userInfo.region[1]?'':userInfo.region[1]}}</text>
+        <text>{{userInfo.region[2]}}</text>
+      </view>
+    </view>
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>邮箱</text>
+        </view>
+        <text>{{userInfo.mailbox}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="info-item">
+    <view class="info-item-box">
+      <view class="detail-other-item">
+        <view class="info-title">
+          <text>注册时间</text>
+        </view>
+        <text>{{registerTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

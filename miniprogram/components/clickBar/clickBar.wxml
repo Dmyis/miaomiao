@@ -1,0 +1,19 @@
+<!--components/clickBar/clickBar.wxml-->
+<view class="barSty">
+  <view class="bar-box">
+    <view class="bar-left">
+      <slot name="icon"></slot>
+      <slot name="title"></slot>
+    </view>
+    <view class="bar-center">
+      <slot name='center'></slot>
+    </view>
+    <view class="bar-right">
+      <text class="content">
+        <block wx:if="{{content}}">{{content}} </block>
+        <slot wx:else name="right"></slot>
+      </text>
+      <text wx:if="{{isRitIcon}}" class="iconfont icon-youjiantou"></text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "clickBar":"/components/clickBar/clickBar"
+  },
+  "navigationBarTitleText": "个人信息"
+}

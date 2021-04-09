@@ -1,0 +1,15 @@
+<!--miniprogram/pages/detail/childPages/defaultBgc/defaultBgc.wxml-->
+<view class="def">
+  <view>
+  </view>
+  <view class="defaultbgc">
+    <view class="img-box" wx:for="{{defaultBgc}}" wx:key="index">
+      <image bindtap="editBgc" data-imgUrl="{{item}}" class="img" src="{{item}}" />
+    </view>
+  </view>
+  <view class="seeImgBox" hidden="{{!isShow}}">
+    <view bindtap="exitModel" class="iconfont icon-quxiao"></view>
+    <image class="currentImg" src="{{currentImage}}"></image>
+    <view bindtap="confirm" class="confirm">设为名片封面</view>
+  </view>
+</view>

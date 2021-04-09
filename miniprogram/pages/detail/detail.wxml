@@ -1,0 +1,81 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<wxs src="../../utils/handleBirthdays.wxs" module="m2"></wxs>
+
+<view wx:if="isLoad">
+  <view class="detail">
+    <view class="detail-bgc" bindtap="handleBrowse">
+      <image mode="aspectFill" src="{{bgc}}" bindload="imgLoad"></image>
+    </view>
+    <view class="detail-content" id="detail-content">
+      <view class="detail-info">
+        <view class="detail-photo">
+          <image mode="aspectFill" bindtap="handleBrowsePPhoto" src="{{detail.userPhoto}}"></image>
+        </view>
+        <view class="detail-text">
+          <text class="detail-nickName">{{detail.nickName}}</text>
+          <block wx:if="{{detail.weixinNumber}}">
+            <text class="iconfont icon-weixin detailInfoIcon"></text>
+            <text>: </text>
+            <block>
+              <text class="NoFriendLimit" wx:if="{{!isFriend && !isUSer}}">仅好友可见</text>
+              <text wx:else bindtap="copyWxNumber" data-number="{{detail.weixinNumber}}">{{detail.weixinNumber}}</text>
+            </block>
+          </block>
+        </view>
+      </view>
+      <view detail-other>
+        <view class="detail-other-item" bindtap="intoDetailInfo">
+          <view class="basic-info">
+            <text class="iconfont icon-renwu1 detailInfoIcon"></text>
+            <view class="basic-info-text">
+              <text decode>{{detail.sex}}&nbsp;</text>
+              <text>{{detail.age}}岁</text>
+              <block wx:if="{{detail.birthday.substr(0,1)}}">
+                <text decode class="separate">&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+                <text decode>{{m2.birthday(detail.birthday)}}&nbsp;</text>
+                <text>{{detail.constellation}}</text>
+              </block>
+              <block wx:if="{{detail.region[2]}}">
+                <text decode class="separate">&nbsp;&nbsp;|&nbsp;&nbsp;</text>
+                <text decode>现居{{detail.region[0]}}</text>
+                <text decode>{{detail.region[0]==detail.region[1]?'':detail.region[1]}}</text>
+                <text decode>{{detail.region[2]}}</text>
+              </block>
+            </view>
+          </view>
+          <view class="iconfont icon-youjiantou"></view>
+        </view>
+        <view class="detail-other-item">
+          <view>
+            <text class="iconfont icon-dianhua detailInfoIcon"></text>
+            <text>电话号码：</text>
+            <block>
+              <text class="NoFriendLimit" wx:if="{{!isFriend && !isUSer}}">仅好友可见</text>
+              <text class="phoneNumber" wx:else bindtap="callPhone"
+                data-phone="{{detail.phoneNumber}}">{{detail.phoneNumber}}</text>
+            </block>
+          </view>
+          <view class="iconfont icon-youjiantou"></view>
+        </view>
+        <view class="detail-other-item">
+          <view class="basic-info">
+            <text class="iconfont icon-bi detailInfoIcon"></text>
+            <view>
+              <text>个性签名：</text>
+              <text>{{detail.signature}}</text>
+            </view>
+          </view>
+          <view class="iconfont icon-youjiantou"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="relation" wx:if="{{isLoad}}">
+    <view class="addFriend flex-center" bindtap="addFriend" wx:if="{{!isFriend && !isUSer}}">加好友</view>
+    <view wx:elif="{{isUSer}}"></view>
+    <view class="friend" wx:else>
+      <view class="video flex-center">音视频通话</view>
+      <view bindtap="handleSendNews" class="flex-center">发信息</view>
+    </view>
+  </view>
+</view>

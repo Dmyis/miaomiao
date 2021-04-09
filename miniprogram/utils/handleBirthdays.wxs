@@ -1,0 +1,14 @@
+var birthday = function(day){
+  var arr = day.substring(5).split('-')
+  if(arr[0].substring(0,1)==0){
+    arr[0] = arr[0].substring(1,2)
+  }
+  if(arr[1].substring(0,1)==0){
+    arr[1] =arr[1].substring(1,2)
+  }
+  if(arr[0].substring(0)==0){
+    return ''
+  }
+  return arr[0]+'月'+arr[1]+'日'
+}
+module.exports.birthday = birthday

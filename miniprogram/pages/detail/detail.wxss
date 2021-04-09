@@ -1,0 +1,129 @@
+/* miniprogram/pages/detail/detail.wxss */
+.detail {
+  transition: transform 2s;
+}
+
+.detail-bgc {
+  width: 100%;
+  height: 400rpx;
+  overflow: hidden;
+  box-shadow: inset 0 -10rpx 30rpx #bbb;
+}
+
+.detail-bgc image {
+  position: relative;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  transition: .5s;
+}
+
+.detail-content {
+  padding: 30rpx;
+  padding-top: 0;
+  transform: translateY(-100rpx);
+}
+
+.detail-info {
+  display: flex;
+  margin-bottom: 50rpx;
+}
+
+.detailInfoIcon {
+  color: #778899;
+  margin-right: 20rpx;
+}
+
+.detail-photo {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.basic-info {
+  display: flex;
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+.detail-info image {
+  border: 4rpx solid #79808D;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+}
+
+.phoneNumber {
+  color: #00ACBC;
+}
+
+.detail-text {
+  margin-left: 30rpx;
+}
+
+.detail-nickName {
+  display: block;
+  text-shadow:
+    1px 1px #aaa,
+    2px 2px #aaa,
+    3px 3px #aaa;
+  margin: 15rpx 0 50rpx;
+  font-size: 40rpx;
+  color: #fff;
+}
+
+.icon-weixin {
+  vertical-align: middle;
+}
+
+.separate {
+  font-size: 25rpx;
+  color: #aaa;
+}
+
+.detail-other-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1rpx solid #d1d1d1;
+}
+
+.relation {
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  font-weight: 500;
+  position: fixed;
+  bottom: 0;
+  background-color: #eee;
+}
+
+.NoFriendLimit {
+  margin-left: 10rpx;
+  color: #444;
+}
+
+.addFriend {
+  height: 80rpx;
+  border-radius: 15rpx;
+  background-color: #2C74FE;
+}
+
+.friend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend view {
+  width: 48%;
+  border-radius: 15rpx;
+  height: 80rpx;
+  background-color: #2C74FE;
+
+}
+
+.friend .video {
+  background-color: #777;
+}

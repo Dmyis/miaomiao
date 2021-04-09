@@ -1,0 +1,40 @@
+<!--miniprogram/pages/index/index.wxml-->
+<!-- 处理点赞过多 -->
+<wxs src="../../utils/unitFomat.wxs" module="m1"></wxs>
+<mp-navigation-bar ext-class="navbar" title="喵星" back="{{false}}" background="#937bf5" color="#fff">
+  <text slot="left" class="iconfont icon-jia" bindtap="openOperationPanel"></text>
+</mp-navigation-bar>
+<view class="index" bindtap="hidOperationPanel" bindtouchstart="hidOperationPanel">
+  <search class="search" style="top:{{statusHeight}}px;"/>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay circular>
+    <block wx:for="{{swiperImg}}" wx:key="index">
+      <swiper-item>
+        <image mode="widthFix" class="swiper_img" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="index-tab">
+    <view class="{{current == 'links'?'active':''}}" data-current="links" bindtap="handleCurrent">推荐</view>
+    <view class="{{current == 'time'?'active':''}}" data-current="time" bindtap="handleCurrent">最新</view>
+  </view>
+  <view class="index-list">
+    <view class="index-list-item" wx:for="{{listData}}" wx:key="index">
+      <image mode="aspectFill" src="{{item.userPhoto}}" data-id="{{item._id}}" bindtap="handleDetail" />
+      <view class="index-list-text">
+        <text data-id="{{item._id}}" bindtap="handleDetail">{{item.nickName}}</text>
+        <view class="links_view" bindtap="handleLinks" data-id="{{item._id}}">
+          <text class="iconfont icon-icon_xihuan"></text>
+          <text class="links">{{m1.unitFomat(item.links)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="operation-panel" style="top:{{statusHeight}}px;" hidden="{{!isOpenOperationPanel}}">
+    <view class="operation-panel-item" wx:for="{{operationList}}" wx:key="index" bindtap="clickOperationItem"
+      data-index="{{index}}">
+      <text class="operation-panel-icon iconfont {{item.icon}}"></text>
+      <text class="operation-panel-text">{{item.text}}</text>
+    </view>
+  </view>
+</view>

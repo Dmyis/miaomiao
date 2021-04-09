@@ -1,0 +1,114 @@
+/* miniprogram/pages/index/index.wxss */
+.index swiper {
+  height: 300rpx;
+  margin: 110rpx 20rpx 20rpx 20rpx;
+  border-radius: 20rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.icon-jia{
+  font-size: 40rpx;
+}
+.search {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.swiper_img {
+  width: 100%;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.index-tab {
+  display: flex;
+  margin: 20rpx;
+}
+
+.index-tab view {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx;
+}
+
+.index-tab .active {
+  border-bottom: 4rpx red solid;
+  color: red;
+}
+
+.index-list {
+  display: flex;
+  flex-wrap: wrap;
+  color: cornflowerblue;
+}
+
+.index-list-item {
+  width: 50%;
+  margin: 10rpx 0;
+}
+
+.index-list-item image {
+  width: 90%;
+  height: 250rpx;
+  margin: 0 auto;
+  display: block;
+}
+
+.index-list-text {
+  padding: 10rpx 0;
+  width: 90%;
+  font-family: fantasy;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.links_view {
+  font-weight: 600;
+}
+
+.index-list-text .links {
+  margin-left: 10rpx;
+}
+.operation-panel{
+  position: fixed;
+  left: 10rpx;
+  background-color: #999;
+  z-index: 999999;
+  border-radius: 6rpx;
+}
+.operation-panel::before{
+  content: '';
+  position: absolute;
+  left: 40rpx;
+  top: -10rpx;
+  width: 0;
+  height: 0;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;  
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid #999; 
+}
+.operation-panel-item{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  height: 30rpx;
+  width: 200rpx;
+  padding:25rpx 20rpx;
+}
+.operation-panel-icon{
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+.operation-panel-text{
+  border-bottom: 1rpx solid #aaa;
+  padding: 25rpx 0;
+}
+.operation-panel-item:last-child
+.operation-panel-text{
+  border-bottom: none;
+}

@@ -1,0 +1,49 @@
+/* miniprogram/pages/user/childPages/friendList/friendList.wxss */
+page{
+  height: 100%;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.idfBg{
+  border-radius: 50%;
+  background-color: #cf1;
+}
+.idf-list{
+  position: fixed;
+  top: 50%;
+  transform:translateY(-50%);
+  right: 10rpx;
+}
+.idf-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rpx 8rpx;
+}
+.idf-item{
+  color: #333;
+  font-size: 20rpx;
+}
+.identification {
+  padding: 5rpx 30rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.friend-item {
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  padding: 15rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.friend-item image {
+  border-radius: 10rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}

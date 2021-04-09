@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-index-list": "../../miniprogram_npm/@miniprogram-component-plus/index-list"
+  }
+}

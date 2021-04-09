@@ -1,0 +1,12 @@
+<!--components/removeList/removeList.wxml-->
+<movable-area class="area">
+  <navigator url="{{'/pages/detail/detail?userid='+userMessage._id}}" open-type="navigate">
+    <image mode="aspectFill" class="image" src="{{userMessage.userPhoto}}" />
+  </navigator>
+  <movable-view class="view" direction="all">
+    <view class="view-content">{{userMessage.nickName}}</view>
+    <view wx:if="{{!isFriend}}" class="isagree" bindtap="handleAddFriend">同意</view>
+    <view wx:else class="agree">已同意</view>
+  </movable-view>
+  <view class="delete" bindtap="handleDelete">删除</view>
+</movable-area>

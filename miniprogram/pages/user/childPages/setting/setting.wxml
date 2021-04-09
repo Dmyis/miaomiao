@@ -1,0 +1,7 @@
+<!--miniprogram/pages/user/childPages/setting/setting.wxml-->
+<view class="setting">
+  <view class="setting-item">
+    <text>共享位置</text>
+    <switch checked="{{isLocation}}" bindchange="switchChange" />
+  </view>
+</view>

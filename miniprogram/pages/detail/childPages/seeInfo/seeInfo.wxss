@@ -1,0 +1,26 @@
+/* miniprogram/pages/detail/childPages/seeInfo/seeInfo.wxss */
+
+.info-item {
+  margin-top: 20rpx;
+}
+
+.info-title {
+  width: 180rpx;
+  color: #555;
+}
+
+.info-item-box {
+  padding:0 13px;
+  background-color: #ffffff;
+}
+
+.detail-other-item {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1rpx solid #d1d1d1;
+}
+.info-item-box:last-child 
+.detail-other-item{
+  border: none;
+}

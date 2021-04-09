@@ -1,0 +1,50 @@
+<!--miniprogram/pages/message/message.wxml-->
+<view class="message">
+  <view wx:if="{{!logged}}">
+    <button bindtap="handleLogin">登录</button>
+  </view>
+  <view wx:else>
+    <click-bar isRitIcon="{{false}}" bindtap="navNewFriend">
+      <text slot="icon" class=" msg-fun-icon iconfont icon-tianjiahaoyou"></text>
+      <text slot="title" class="msg-fun-title">新的朋友</text>
+      <text slot="right" class="unread">1</text>
+    </click-bar>
+    <click-bar isRitIcon="{{false}}">
+      <text slot="icon" class=" msg-fun-icon iconfont icon-xihuan"></text>
+      <text slot="title" class="msg-fun-title">我的喜欢</text>
+    </click-bar>
+    <click-bar isRitIcon="{{false}}">
+      <text slot="icon" class=" msg-fun-icon iconfont icon-thumbup-fill"></text>
+      <text slot="title" class="msg-fun-title">收到的赞</text>
+    </click-bar>
+    <view class="weui-cells" wx:for="{{messageList}}" wx:key="index" bindtap="handleNavMsg" data-index="{{index}}">
+      <mp-slideview id="slideview" buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+        <view class="msg-item">
+          <view class="msg-image-box">
+            <image wx:if="{{item.type==1}}" mode="aspectFill" class="msg-image" src="{{item.icon}}"></image>
+            <view class="msg-image msg-small-box" wx:if="{{item.type==2}}">
+              <block wx:if="{{item.icon.length<5}}">
+                <image wx:for="{{item.icon}}" wx:key="index" wx:for-item="iconI" class="groupOne" mode="aspecFill"
+                  src="{{iconI}}"></image>
+              </block>
+              <block wx:if="{{item.icon.length>=5}}">
+                <image wx:for="{{item.icon}}" wx:key="index" wx:for-item="iconI" class="groupTwo" mode="aspecFill"
+                  src="{{iconI}}"></image>
+              </block>
+            </view>
+            <mp-badge wx:if="{{}}" content="{{item.unreadNumber}}"
+              style="position: absolute;top: -.4em;right: -.4em;" />
+          </view>
+
+          <view class="msg-content">
+            <view class="msg-content-head">
+              <view class="msg-title">{{item.title}}</view>
+              <view class="msg-time">{{item.time}}</view>
+            </view>
+            <view class="msg-text">{{item.content}}</view>
+          </view>
+        </view>
+      </mp-slideview>
+    </view>
+  </view>
+</view>

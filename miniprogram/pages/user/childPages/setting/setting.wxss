@@ -1,0 +1,9 @@
+/* miniprogram/pages/user/childPages/setting/setting.wxss */
+.setting-item {
+  padding: 25rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
