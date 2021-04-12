@@ -1,4 +1,7 @@
 <!--miniprogram/pages/user/childPages/editUserInfo/editUserInfo.wxml-->
+<import src="editUserInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
 <view class="edit">
   <view class="edit-content">
     <view class="edit-photo">

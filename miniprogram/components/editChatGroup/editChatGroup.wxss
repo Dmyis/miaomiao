@@ -1,0 +1,74 @@
+/* components/editChatGroup/editChatGroup.wxss */
+.edit-group-info{
+  height: 100vh;
+  position: relative;
+}
+.edit-hed{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 100rpx;
+}
+.edit-title{
+  font-size: 38rpx;
+  font-weight: 500;
+  margin-bottom: 25rpx;
+}
+.edit-describe{
+  font-size: 30rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.changs-box{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  border-top:1rpx solid #c5c5c5 ;
+  border-bottom:1rpx solid #c5c5c5 ;
+}
+.msg-image-box {
+  position: relative;
+  margin-right: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #ccc;
+  border-radius: 10rpx;
+}
+.msg-image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 10rpx;
+}
+
+.msg-small-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rpx 0 0 2rpx;
+}
+
+.groupOne {
+  height: 37rpx;
+  width: 37rpx;
+  margin:0 2rpx 2rpx 0;
+  vertical-align: top;
+}
+.groupTwo{
+  height: 23rpx;
+  width: 23rpx;
+  margin:0 2rpx 2rpx 0;
+  vertical-align: top;
+}
+
+.edit-ipt{
+  caret-color: #07c160;
+}
+.edit-footer{
+  position: absolute;
+  bottom:150rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

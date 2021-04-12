@@ -8,10 +8,6 @@ page {
   z-index: 9999998;
 }
 
-.navbar
-.weui-navigation-bar__center{
-  font-size: 24rpx;
-}
 .flex-center {
   display: flex;
   justify-content: center;
@@ -37,4 +33,7 @@ page {
 .icon-youjiantou {
   margin-left: 10rpx;
   color: #777;
+}
+.mar-but-20{
+  margin-bottom: 20rpx;
 }

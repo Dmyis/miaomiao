@@ -1,0 +1,6 @@
+<!--miniprogram/pages/message/childPages/editGroup/editGroup.wxml-->
+<edit-chat-group
+  value="{{value}}" 
+  title="{{title}}"
+  describe="{{describe}}"
+  photo="{{photo}}" bindchangs="handleChangs" />

@@ -1,0 +1,205 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/4/11 下午4:06:05
+使用方法：
+在 E:\mini-project\miaomiao\miniprogram\pages\message\childPages\chatInfo\chatInfo.wxml 引入模板
+
+```
+<import src="chatInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 E:\mini-project\miaomiao\miniprogram\pages\message\childPages\chatInfo\chatInfo.wxss 中引入样式
+```
+@import "./chatInfo.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="chat-group-info">
+      <view class="group-users">
+        <view class="group-user-item" data-id="b00064a7605aa4080b7d64ea406bd1d6">
+          <image class="user-photo sk-image" mode="aspectFill"></image>
+          <view class="user-nickName sk-transparent sk-text-18-7500-809 sk-text" style="background-position-x: 50%;">糖没你甜</view>
+        </view>
+        <view class="group-user-item" data-id="b000647605aa4080b7d64ea406bd1d6">
+          <image class="user-photo sk-image" mode="aspectFill"></image>
+          <view class="user-nickName sk-transparent sk-text-18-7500-809 sk-text" style="background-position-x: 50%;"></view>
+        </view>
+        <view class="group-user-item" data-id="b00064a7605aa4080b7dea406bd1d6">
+          <image class="user-photo sk-image" mode="aspectFill"></image>
+          <view class="user-nickName sk-transparent sk-text-18-7500-809 sk-text" style="background-position-x: 50%;"></view>
+        </view>
+        <view class="group-user-item" data-id="b00064a705aa4080b7d64ea406bd1d6">
+          <image class="user-photo sk-image" mode="aspectFill"></image>
+          <view class="user-nickName sk-transparent sk-text-18-7500-809 sk-text" style="background-position-x: 50%;"></view>
+        </view>
+        <view class="group-user-item" data-id="28ee4e3e6059a6510c27d55566633feb">
+          <image class="user-photo sk-image" mode="aspectFill"></image>
+          <view class="user-nickName sk-transparent sk-text-18-7500-282 sk-text" style="background-position-x: 50%;">哄哄</view>
+        </view>
+      </view>
+      <view class="mar-but-20">
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-692 sk-text">群聊名称</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-732 sk-text">备注</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="mar-but-20">
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-66 sk-text">查找聊天内容</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="mar-but-20">
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-412 sk-text">消息免打扰</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content">
+                  <switch color="#EFEFEF"></switch>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-406 sk-text">置顶</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content">
+                  <switch color="#EFEFEF"></switch>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-50 sk-text">保存到通讯录</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content">
+                  <switch color="#EFEFEF"></switch>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="mar-but-20">
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-111 sk-text">我在本群的昵称</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-564 sk-text">显示群成员昵称</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content">
+                  <switch color="#EFEFEF"></switch>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="mar-but-20">
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-312 sk-text">设置当前聊天背景</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view is="components/clickBar/clickBar">
+          <view class="clickBar--barSty">
+            <view class="clickBar--bar-box" style="border: none;">
+              <view class="clickBar--bar-left">
+                <text class="sk-transparent sk-text-18-7500-702 sk-text">投诉</text>
+              </view>
+              <view class="clickBar--bar-center"></view>
+              <view class="clickBar--bar-right">
+                <view class="clickBar--content"></view>
+                <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="group-operate">
+        <view class="operate empty sk-transparent sk-text-18-7500-363 sk-text" style="background-position-x: 50%;">清空聊天记录</view>
+      </view>
+    </view>
+    <view class="sk-loading-spinner">
+      <view class="circular"></view>
+    </view>
+  </view>
+</template>

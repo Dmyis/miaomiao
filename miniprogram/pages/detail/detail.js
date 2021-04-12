@@ -260,7 +260,7 @@ Page({
           wx.navigateTo({
             url: '../im/room/room?nickName=' + this.data.detail.nickName +
               '&groupId=' + res._id + '&userId=' + friendId +
-               "&userPhoto=" + this.data.detail.userPhoto + 'chatType=1'
+               "&userPhoto=" + this.data.detail.userPhoto + '&chatType=1'
           })
         }).catch(err => {
 
@@ -270,7 +270,7 @@ Page({
         wx.navigateTo({
           url: '../im/room/room?nickName=' + this.data.detail.nickName +
             '&groupId=' + res.data[0]._id + '&userId=' + friendId +
-            "&userPhoto=" + this.data.detail.userPhoto+ 'chatType=1'
+            "&userPhoto=" + this.data.detail.userPhoto+ '&chatType=1'
         })
       }
     }).catch(err => {

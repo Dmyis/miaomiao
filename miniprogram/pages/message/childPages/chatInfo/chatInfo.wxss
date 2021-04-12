@@ -1,4 +1,7 @@
 /* miniprogram/pages/message/childPages/chatInfo/chatInfi.wxss */
+@import "./chatInfo.skeleton.wxss";
+
+
 .group-users{
   background-color: #fff;
   display: flex;
@@ -18,8 +21,18 @@
   height: 80rpx;
   border-radius: 10rpx;
 }
+.user-operation{
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+  border: 5rpx #999 dashed;
+}
 .user-nickName{
   width: 80rpx;
+  height: 45rpx;
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;

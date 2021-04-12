@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: true,
     logged: false,
     slideButtons: [{
       text: '标为已读',
@@ -83,7 +84,7 @@ Page({
         logged: true,
       })
     }
-    if(!this.data.messageList.length){
+    if (!this.data.messageList.length) {
       this.getMessageList()
     }
   },
@@ -142,9 +143,6 @@ Page({
       chatType = "&chatType=" + msg.type
     }
     let title = msg.title
-    if (msg.type == 2) {
-      title = "群聊(" + msg.userIds.length + ")"
-    }
     wx.navigateTo({
       url: '../im/room/room?nickName=' + title +
         '&groupId=' + msg.groupId + '&userId=' +
@@ -173,7 +171,6 @@ Page({
     })
       .orderBy('sendTimeTs', 'desc')
       .get().then(res => {
-        console.log(res.data);
         res.data.forEach((item, i) => {
           item.time = msgTime(item.time)
           let msg = res.data[i]
@@ -191,30 +188,29 @@ Page({
             msg.icon = icon
             msg.title = title
           }
-          if(msg.type == 2){
+          if (msg.type == 2) {
             //如果是群聊
             let content = msg.content
-            if(msg.creator._openid == app.userInfo._openid){
+            if (msg.creator._openid == app.userInfo._openid) {
               //如果发起群聊的是自己
-              if(msg.childType == 'chat_sys'){
+              if (msg.childType == 'chat_sys') {
                 //如果信息为系统信息
-                content = "您"+content
+                content = "您" + content
               }
-            }else{
-                let str = msg.creator.nickName + ':'
-                if(msg.childType == 'chat_sys'){
-                  str = msg.creator.nickName + " "
-                }  
-                content = str+content
+            } else {
+              let str = msg.creator.nickName + ':'
+              if (msg.childType == 'chat_sys') {
+                str = msg.creator.nickName + " "
+              }
+              content = str + content
             }
             msg.content = content
           }
         });
-        if (res.data.length > 0) {
-          this.setData({
-            messageList: res.data
-          })
-        }
+        this.setData({
+          loading: false,
+          messageList: res.data
+        })
         //开始监听消息
         this.initWatch()
       })
@@ -255,21 +251,21 @@ Page({
                   msg.icon = icon
                   msg.title = title
                 }
-                if(msg.type == 2){
+                if (msg.type == 2) {
                   //如果时群聊
                   let content = msg.content
-                  if(msg.creator._openid == app.userInfo._openid){
+                  if (msg.creator._openid == app.userInfo._openid) {
                     //如果发起群聊的是自己
-                    if(msg.childType == 'chat_sys'){
+                    if (msg.childType == 'chat_sys') {
                       //如果信息为系统信息
-                      content = "您"+content
+                      content = "您" + content
                     }
-                  }else{
-                      let str = msg.creator.nickName + ':'
-                      if(msg.childType == 'chat_sys'){
-                        str = msg.creator.nickName + " "
-                      }  
-                      content = str+content
+                  } else {
+                    let str = msg.creator.nickName + ':'
+                    if (msg.childType == 'chat_sys') {
+                      str = msg.creator.nickName + " "
+                    }
+                    content = str + content
                   }
                   msg.content = content
                 }

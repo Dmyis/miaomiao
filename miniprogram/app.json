@@ -16,7 +16,8 @@
     "pages/message/childPages/praise/praise",
     "pages/message/childPages/newFriend/newFriend",
     "pages/index/childPages/groupChat/create",
-    "pages/message/childPages/chatInfo/chatInfo"
+    "pages/message/childPages/chatInfo/chatInfo",
+    "pages/message/childPages/editGroup/editGroup"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

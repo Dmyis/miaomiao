@@ -1,4 +1,6 @@
 /* miniprogram/pages/message/message.wxss */
+@import "./message.skeleton.wxss";
+
 .msg-fun-icon {
   font-size: 33rpx;
   color: #fff;

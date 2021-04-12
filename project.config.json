@@ -1,6 +1,50 @@
 {
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
+  "skeleton-config": {
+    "global": {
+      "loading": "spin",
+      "text": {
+        "color": "#EEEEEE"
+      },
+      "image": {
+        "shape": "",
+        "color": "#EFEFEF",
+        "shapeOpposite": []
+      },
+      "button": {
+        "color": "#EFEFEF",
+        "excludes": []
+      },
+      "pseudo": {
+        "color": "#EFEFEF",
+        "shape": "circle",
+        "shapeOpposite": []
+      },
+      "excludes": [],
+      "remove": [
+        ".footer"
+      ],
+      "empty": [],
+      "hide": [],
+      "grayBlock": [
+        ".swiper-item",
+        ".scroll-view-item"
+      ],
+      "cssUnit": "rpx",
+      "decimal": 4,
+      "showNative": false,
+      "backgroundColor": "transparent",
+      "mode": "auto",
+      "templateName": "skeleton"
+    },
+    "pages": {
+      "index/index": {},
+      "other/other": {
+        "showNative": true
+      }
+    }
+  },
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -55,8 +99,7 @@
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
+      "list": [{
           "id": -1,
           "name": "db guide",
           "pathName": "pages/databaseGuide/databaseGuide",

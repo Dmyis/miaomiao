@@ -1,8 +1,12 @@
 <!--miniprogram/pages/message/message.wxml-->
-<view class="message">
-  <view wx:if="{{!logged}}">
-    <button bindtap="handleLogin">登录</button>
-  </view>
+<import src="message.skeleton.wxml" />
+
+<view wx:if="{{!logged}}">
+  <button bindtap="handleLogin">登录</button>
+</view>
+
+<view class="message" wx:else>
+  <template is="skeleton" wx-if="{{loading}}" />
   <view wx:else>
     <click-bar isRitIcon="{{false}}" bindtap="navNewFriend">
       <text slot="icon" class=" msg-fun-icon iconfont icon-tianjiahaoyou"></text>

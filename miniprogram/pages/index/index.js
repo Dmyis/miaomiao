@@ -7,25 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    swiperImg: ['../../images/1.jpg','../../images/lb3.jpg'],
+    loading: true,
+    swiperImg: ['../../images/1.jpg', '../../images/lb3.jpg'],
     indicatorDots: true,
     listData: [],
-    isOpenOperationPanel:false,
-    operationList:[],
+    isOpenOperationPanel: false,
+    operationList: [],
     current: 'links',
-    statusHeight:120
+    statusHeight: 120
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
     const systemInfo = wx.getSystemInfoSync();
     const menuButtonInfo = wx.getMenuButtonBoundingClientRect();
-    let  navBarHeight = (menuButtonInfo.top - systemInfo.statusBarHeight) * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
+    let navBarHeight = (menuButtonInfo.top - systemInfo.statusBarHeight) * 2 + menuButtonInfo.height + systemInfo.statusBarHeight;
     this.setData({
-      statusHeight:navBarHeight
+      statusHeight: navBarHeight
     })
     this.initOperationList()
   },
@@ -35,7 +35,6 @@ Page({
    */
   onReady: function () {
     this.getUsers()
-
   },
 
   /**
@@ -86,69 +85,70 @@ Page({
       links: true,
       nickName: true,
     })
-    //通过orderBy来进行排序
-    //（https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.orderBy.html）
+      //通过orderBy来进行排序
+      //（https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.orderBy.html）
       .orderBy(this.data.current, 'desc')
       .get().then(res => {
         this.setData({
-          listData: res.data
+          listData: res.data,
+          loading: false
         })
       })
   },
-  openOperationPanel(){
-    if(this.data.isOpenOperationPanel){
+  openOperationPanel() {
+    if (this.data.isOpenOperationPanel) {
       this.setData({
-        isOpenOperationPanel:false
+        isOpenOperationPanel: false
       })
-    }else{
+    } else {
       this.setData({
-        isOpenOperationPanel:true
+        isOpenOperationPanel: true
       })
     }
   },
-  initOperationList(){
+  initOperationList() {
     var list = []
     for (let i = 0; i < 2; i++) {
       let item = {}
-      if(i==0){
+      if (i == 0) {
         item.icon = 'icon-liaotian',
-        item.text = '发起群聊'
+          item.text = '发起群聊'
       }
-      if(i==1){
+      if (i == 1) {
         item.icon = 'icon-icon_tianjiahaoyou',
-        item.text = '添加好友'
+          item.text = '添加好友'
       }
       list.push(item)
     }
     this.setData({
-      operationList:list
+      operationList: list
     })
   },
-  hidOperationPanel(){
+  hidOperationPanel() {
     this.setData({
-      isOpenOperationPanel:false
+      isOpenOperationPanel: false
     })
   },
-  clickOperationItem(e){
-    
+  clickOperationItem(e) {
+
     let openid = app.userInfo._openid
-    if(!openid){
+    if (!openid) {
       app.login()
       return
     }
-    let {index} = e.currentTarget.dataset
-    if(index==0){
+    let { index } = e.currentTarget.dataset
+    if (index == 0) {
       //发起群聊
       wx.navigateTo({
         url: './childPages/groupChat/create',
       })
-    }else if(index==1){
+    } else if (index == 1) {
       wx.navigateTo({
         url: '../../components/searchS/search',
       })
     }
     this.setData({
-      isOpenOperationPanel:false
+      isOpenOperationPanel: false
     })
   },
   //点击tab切换
@@ -157,7 +157,7 @@ Page({
     if (this.data.current == current) return
     this.setData({
       current
-    },()=>{
+    }, () => {
       this.getUsers()
     })
   },
@@ -190,11 +190,11 @@ Page({
     })
   },
   //跳转到详情页
-  handleDetail(e){
-    const {id} = e.target.dataset
+  handleDetail(e) {
+    const { id } = e.target.dataset
     wx.navigateTo({
       url: '../detail/detail?userid=' + id,
     })
-    
+
   }
 })

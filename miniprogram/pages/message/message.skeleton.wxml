@@ -1,0 +1,117 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/4/10 下午7:02:50
+使用方法：
+在 E:\mini-project\miaomiao\miniprogram\pages\message\message.wxml 引入模板
+
+```
+<import src="message.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 E:\mini-project\miaomiao\miniprogram\pages\message\message.wxss 中引入样式
+```
+@import "./message.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="message">
+      <view>
+        <view class="weui-cells sk-pseudo sk-pseudo-circle" data-index="0">
+          <view is="miniprogram_npm/weui-miniprogram/slideview/slideview" id="slideview">
+            <view class="weui-slideview slideview--weui-slideview weui-movable-view slideview--weui-movable-view" style="width: 100%;height: 100%;">
+              <view class="weui-slideview__left slideview--weui-slideview__left left slideview--left" style="width:100%;">
+                <view class="msg-item" style="border: none;">
+                  <view class="msg-image-box">
+                    <view class="msg-image msg-small-box">
+                      <image class="groupOne sk-image" mode="aspecFill"></image>
+                      <image class="groupOne sk-image" mode="aspecFill"></image>
+                    </view>
+                  </view>
+                  <view class="msg-content">
+                    <view class="msg-content-head">
+                      <view class="msg-title sk-transparent sk-text-14-5834-478 sk-text">哄哄`糖没你甜</view>
+                      <view class="msg-time sk-transparent sk-text-14-5833-979 sk-text">05:07</view>
+                    </view>
+                    <view class="msg-text sk-transparent sk-text-14-5833-257 sk-text">您发起群聊</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells sk-pseudo sk-pseudo-circle" data-index="1">
+          <view is="miniprogram_npm/weui-miniprogram/slideview/slideview" id="slideview">
+            <view class="weui-slideview slideview--weui-slideview weui-movable-view slideview--weui-movable-view" style="width: 100%;height: 100%;">
+              <view class="weui-slideview__left slideview--weui-slideview__left left slideview--left" style="width:100%;">
+                <view class="msg-item" style="border: none;">
+                  <view class="msg-image-box">
+                    <view class="msg-image msg-small-box"></view>
+                  </view>
+                  <view class="msg-content">
+                    <view class="msg-content-head">
+                      <view class="msg-title sk-transparent sk-text-14-5834-892 sk-text">糖没你甜`测试号🐷`哄哄</view>
+                      <view class="msg-time sk-transparent sk-text-14-5833-882 sk-text">00:25</view>
+                    </view>
+                    <view class="msg-text sk-transparent sk-text-14-5833-97 sk-text">s</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells sk-pseudo sk-pseudo-circle" data-index="2">
+          <view is="miniprogram_npm/weui-miniprogram/slideview/slideview" id="slideview">
+            <view class="weui-slideview slideview--weui-slideview weui-movable-view slideview--weui-movable-view" style="width: 100%;height: 100%;">
+              <view class="weui-slideview__left slideview--weui-slideview__left left slideview--left" style="width:100%;">
+                <view class="msg-item" style="border: none;">
+                  <view class="msg-image-box">
+                    <view class="msg-image msg-small-box">
+                      <image class="groupTwo sk-image" mode="aspecFill"></image>
+                      <image class="groupTwo sk-image" mode="aspecFill"></image>
+                      <image class="groupTwo sk-image" mode="aspecFill"></image>
+                      <image class="groupTwo sk-image" mode="aspecFill"></image>
+                      <image class="groupTwo sk-image" mode="aspecFill"></image>
+                    </view>
+                  </view>
+                  <view class="msg-content">
+                    <view class="msg-content-head">
+                      <view class="msg-title sk-transparent sk-text-14-5834-804 sk-text">哄哄`测试号🐷`糖没你甜</view>
+                      <view class="msg-time sk-transparent sk-text-14-5833-430 sk-text">00:24</view>
+                    </view>
+                    <view class="msg-text sk-transparent sk-text-14-5833-990 sk-text">1、2</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells sk-pseudo sk-pseudo-circle" data-index="3">
+          <view is="miniprogram_npm/weui-miniprogram/slideview/slideview" id="slideview">
+            <view class="weui-slideview slideview--weui-slideview weui-movable-view slideview--weui-movable-view" style="width: 100%;height: 100%;">
+              <view class="weui-slideview__left slideview--weui-slideview__left left slideview--left" style="width:100%;">
+                <view class="msg-item" style="border: none;">
+                  <view class="msg-image-box">
+                    <image class="msg-image sk-image" mode="aspectFill"></image>
+                  </view>
+                  <view class="msg-content">
+                    <view class="msg-content-head">
+                      <view class="msg-title sk-transparent sk-text-14-5834-734 sk-text">糖没你甜</view>
+                      <view class="msg-time sk-transparent sk-text-14-5833-193 sk-text">星期5</view>
+                    </view>
+                    <view class="msg-text sk-transparent sk-text-14-5833-878 sk-text">jio]\</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading-spinner">
+      <view class="circular"></view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "edit-chat-group":"../../../../components/editChatGroup/editChatGroup"
+  },
+  "navigationBarTitleText": "群聊信息"
+}

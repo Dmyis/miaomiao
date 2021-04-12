@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1617075701959, function(require, module, exports) {
+__DEFINE__(1617982369824, function(require, module, exports) {
 /**
  * Detect Electron renderer process, which is node, but we should
  * treat as a browser.
@@ -16,8 +16,8 @@ if (typeof process !== 'undefined' && process.type === 'renderer') {
   module.exports = require('./node.js');
 }
 
-}, function(modId) {var map = {"./browser.js":1617075701960,"./node.js":1617075701962}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1617075701960, function(require, module, exports) {
+}, function(modId) {var map = {"./browser.js":1617982369825,"./node.js":1617982369827}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1617982369825, function(require, module, exports) {
 /**
  * This is the web browser implementation of `debug()`.
  *
@@ -204,8 +204,8 @@ function localstorage() {
   } catch (e) {}
 }
 
-}, function(modId) { var map = {"./debug":1617075701961}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1617075701961, function(require, module, exports) {
+}, function(modId) { var map = {"./debug":1617982369826}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1617982369826, function(require, module, exports) {
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -410,7 +410,7 @@ function coerce(val) {
 }
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1617075701962, function(require, module, exports) {
+__DEFINE__(1617982369827, function(require, module, exports) {
 /**
  * Module dependencies.
  */
@@ -660,7 +660,7 @@ function init (debug) {
 
 exports.enable(load());
 
-}, function(modId) { var map = {"./debug":1617075701961}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1617075701959);
+}, function(modId) { var map = {"./debug":1617982369826}; return __REQUIRE__(map[modId], modId); })
+return __REQUIRE__(1617982369824);
 })()
 //# sourceMappingURL=index.js.map

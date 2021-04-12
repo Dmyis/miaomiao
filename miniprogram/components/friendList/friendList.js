@@ -10,7 +10,9 @@ Component({
     showSelect:{
       type:Boolean,
       value:false
-    }
+    },
+    type:Number,
+    memberIds:Array
   },
 
   /**
@@ -26,6 +28,9 @@ Component({
   lifetimes: {
     attached() {
       this.getFriendList()
+      setTimeout(() => {
+        console.log(this.data);
+      }, 1000);
     }
   },
   methods: {

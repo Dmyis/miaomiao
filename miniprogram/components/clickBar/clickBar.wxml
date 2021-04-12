@@ -9,10 +9,10 @@
       <slot name='center'></slot>
     </view>
     <view class="bar-right">
-      <text class="content">
+      <view class="content">
         <block wx:if="{{content}}">{{content}} </block>
         <slot wx:else name="right"></slot>
-      </text>
+      </view>
       <text wx:if="{{isRitIcon}}" class="iconfont icon-youjiantou"></text>
     </view>
   </view>

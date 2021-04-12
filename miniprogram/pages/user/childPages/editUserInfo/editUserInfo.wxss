@@ -1,4 +1,6 @@
 /* miniprogram/pages/user/childPages/editUserInfo/editUserInfo.wxss */
+@import "./editUserInfo.skeleton.wxss";
+
 
 page {
   overflow: hidden;

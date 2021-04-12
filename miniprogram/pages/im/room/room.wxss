@@ -1,3 +1,4 @@
+
 .container {
   height: 100%;
   position: absolute;
@@ -6,4 +7,18 @@
   left: 0;
   right: 0;
   padding-bottom: 30rpx;
+}
+.nav-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33rpx;
+}
+.line{
+  border-left:2rpx solid #98f ;
+  margin: 0 20rpx;
+  height: 100%;
+}
+.nav-left .iconfont{
+  font-size: 42rpx;
 }

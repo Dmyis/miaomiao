@@ -1,4 +1,8 @@
 /* miniprogram/pages/index/index.wxss */
+
+@import "./index.skeleton.wxss";
+
+
 .index swiper {
   height: 300rpx;
   margin: 110rpx 20rpx 20rpx 20rpx;

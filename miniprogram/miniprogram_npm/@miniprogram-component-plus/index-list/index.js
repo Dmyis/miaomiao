@@ -186,8 +186,8 @@ Component({
     },
     methods: {
         choose: function choose(e) {
-            var item = e.currentTarget.dataset
-            this.triggerEvent('choose', { item: item });
+                var item = e.currentTarget.dataset 
+                this.triggerEvent('choose', { item: item });
         },
         scrollTo: function scrollTo(e) {
             this.__scrollTo(e);

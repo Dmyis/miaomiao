@@ -1,0 +1,92 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/4/10 下午7:08:17
+使用方法：
+在 E:\mini-project\miaomiao\miniprogram\pages\index\index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 E:\mini-project\miaomiao\miniprogram\pages\index\index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="index">
+      <view is="components/searchS/search" class="search" style="top:60px;">
+        <view class="search--container">
+          <view class="search--search">
+            <view class="search--search-text">
+              <text class="search--iconfont search--icon-search sk-pseudo sk-pseudo-circle"></text>
+              <view class="search--ipt sk-image" placeholder="搜索猫星人" type="text" value="true"></view>
+            </view>
+          </view>
+          <view class="search--search-history">
+            <text class="sk-transparent sk-text-18-7500-644 sk-text">历史搜索</text>
+            <text class="search--iconfont search--icon-icon-shanchu sk-pseudo sk-pseudo-circle"></text>
+          </view>
+          <view class="search--search-history-btn"></view>
+        </view>
+      </view>
+      <swiper autoplay="false" circular="true" indicator-dots="true" current="0">
+        <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+          <image class="swiper_img sk-image" mode="widthFix" style="height: 196.5px;"></image>
+        </swiper-item>
+      </swiper>
+      <view class="index-tab">
+        <view class="active sk-transparent sk-text-18-7500-243 sk-text" data-current="links" style="border: none; background-position-x: 50%;">推荐</view>
+        <view data-current="time" class="sk-transparent sk-text-18-7500-455 sk-text" style="background-position-x: 50%;">最新</view>
+      </view>
+      <view class="index-list">
+        <view class="index-list-item">
+          <image data-id="28ee4e3e605b64bc0c64685877c3af2d" mode="aspectFill" class="sk-image"></image>
+          <view class="index-list-text">
+            <text data-id="28ee4e3e605b64bc0c64685877c3af2d" class="sk-transparent sk-text-18-7500-588 sk-text">我不会生气</text>
+            <view class="links_view" data-id="28ee4e3e605b64bc0c64685877c3af2d">
+              <text class="iconfont icon-icon_xihuan sk-pseudo sk-pseudo-circle"></text>
+              <text class="links sk-transparent sk-text-18-7500-994 sk-text">66</text>
+            </view>
+          </view>
+        </view>
+        <view class="index-list-item">
+          <image data-id="28ee4e3e6059a6510c27d55566633feb" mode="aspectFill" class="sk-image"></image>
+          <view class="index-list-text">
+            <text data-id="28ee4e3e6059a6510c27d55566633feb" class="sk-transparent sk-text-18-7500-181 sk-text">哄哄</text>
+            <view class="links_view" data-id="28ee4e3e6059a6510c27d55566633feb">
+              <text class="iconfont icon-icon_xihuan sk-pseudo sk-pseudo-circle"></text>
+              <text class="links sk-transparent sk-opacity">1</text>
+            </view>
+          </view>
+        </view>
+        <view class="index-list-item">
+          <image data-id="b00064a7605aa4080b7d64ea406bd1d6" mode="aspectFill" class="sk-image"></image>
+          <view class="index-list-text">
+            <text data-id="b00064a7605aa4080b7d64ea406bd1d6" class="sk-transparent sk-text-18-7500-322 sk-text">糖没你甜</text>
+            <view class="links_view" data-id="b00064a7605aa4080b7d64ea406bd1d6">
+              <text class="iconfont icon-icon_xihuan sk-pseudo sk-pseudo-circle"></text>
+              <text class="links sk-transparent sk-opacity">0</text>
+            </view>
+          </view>
+        </view>
+        <view class="index-list-item">
+          <image data-id="28ee4e3e605d71780ca7adf12c013074" mode="aspectFill" class="sk-image"></image>
+          <view class="index-list-text">
+            <text data-id="28ee4e3e605d71780ca7adf12c013074" class="sk-transparent sk-text-18-7500-425 sk-text">测试号🐷</text>
+            <view class="links_view" data-id="28ee4e3e605d71780ca7adf12c013074">
+              <text class="iconfont icon-icon_xihuan sk-pseudo sk-pseudo-circle"></text>
+              <text class="links sk-transparent sk-opacity">0</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="sk-loading-spinner">
+      <view class="circular"></view>
+    </view>
+  </view>
+</template>

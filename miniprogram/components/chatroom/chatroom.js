@@ -156,7 +156,6 @@ Component({
         if (!e.detail.value) {
           return
         }
-
         const { collection } = this.properties
         const db = this.db
         const _ = db.command
@@ -228,6 +227,7 @@ Component({
       })
     },
     addSysMsg(text,time,timeTs){
+      console.log(this.data.chatType);
       db.collection('sys_msg').add({
         data: {
           type: this.data.chatType,

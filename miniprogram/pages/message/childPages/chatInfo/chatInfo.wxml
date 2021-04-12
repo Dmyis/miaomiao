@@ -1,17 +1,115 @@
 <!--miniprogram/pages/message/childPages/chatInfo/chatInfi.wxml-->
-<view class="chat-group-info">
+<import src="chatInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+
+<block wx:else>
+<view wx:if="{{chatType==2}}" class="chat-group-info">
   <view class="group-users">
-    <view class="group-user-item" wx:for="{{members}}">
-      <image mode="aspectFill" class="user-photo" src="/images/user/user-unlogin.png"></image>
-      <view class="user-nickName">昵称昵称昵称昵称昵称</view>
+    <view class="group-user-item" wx:for="{{membersMap}}" wx:key="index" bindtap="navDetail" data-id="{{item._id}}">
+      <image mode="aspectFill" class="user-photo" src="{{item.userPhoto}}"></image>
+      <view class="user-nickName">{{item.nickName}}</view>
+    </view>
+    <view class="group-user-item" >
+      <view class="user-operation" bindtap="clickMemberAdd">+</view>
+      <view class="user-nickName"></view>
+    </view>
+    <view class="group-user-item" >
+      <view class="user-operation" bindtap="clickMemberDelete">-</view>
+      <view class="user-nickName"></view>
     </view>
   </view>
+  <view class="mar-but-20">
+    <clickBar bindtap="changeGroupInfo">
+      <text slot="title">群聊名称</text>
+      <text slot="right">{{groupInfo.name?groupInfo.name:"未定义"}}</text>
+    </clickBar>
+    <clickBar>
+      <text slot="title">备注</text>
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">查找聊天内容</text>
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">消息免打扰</text>
+      <switch slot="right" checked="{{disturb}}" />
+    </clickBar>
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">置顶</text>
+      <switch slot="right" checked="{{top}}" />
+    </clickBar>
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">保存到通讯录</text>
+      <switch slot="right" checked="{{keepMail}}" />
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">我在本群的昵称</text>
+    </clickBar>
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">显示群成员昵称</text>
+      <switch slot="right" checked="{{showUserName}}" />
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">设置当前聊天背景</text>
+    </clickBar>
+    <clickBar>
+      <text slot="title">投诉</text>
+    </clickBar>
+  </view>
 
-  <clickBar>
-    <text slot="title">群聊名称</text>
-  </clickBar>
   <view class="group-operate">
     <view class="operate empty">清空聊天记录</view>
     <view class="operate delete">删除并退出</view>
   </view>
 </view>
+
+<view wx:else class="chat-single-info">
+  <view class="group-users">
+    <view class="group-user-item" wx:for="{{membersMap}}" wx:key="index" bindtap="navDetail" data-id="{{item._id}}">
+      <image mode="aspectFill" class="user-photo" src="{{item.userPhoto}}"></image>
+      <view class="user-nickName">{{item.nickName}}</view>
+    </view>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">查找聊天内容</text>
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">消息免打扰</text>
+      <switch slot="right" checked="{{disturb}}" />
+    </clickBar>
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">置顶</text>
+      <switch slot="right" checked="{{top}}" />
+    </clickBar>
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">提醒</text>
+      <switch slot="right" checked="{{remind}}" />
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">设置当前聊天背景</text>
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar isRitIcon="{{false}}">
+      <text slot="title">清空聊天记录</text>
+    </clickBar>
+  </view>
+  <view class="mar-but-20">
+    <clickBar>
+      <text slot="title">投诉</text>
+    </clickBar>
+  </view>
+</view>
+</block>

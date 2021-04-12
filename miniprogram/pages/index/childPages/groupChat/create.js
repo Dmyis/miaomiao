@@ -8,13 +8,32 @@ Page({
    */
   data: {
     member: 0,
-    userPhotos:[]
+    userPhotos:[],
+    title:"发起群聊",
+    type:0, //0:默认值 发起群聊  1:添加群成员  2:删除群成员
+    memberIds:[] //添加群成员是,从群聊页传过来的群成员id
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let {type,memberIds,groupId} =  options
+    if(type == 1){
+     this.setData({
+       type:1,
+       title:'选择联系人',
+       memberIds:JSON.parse(decodeURIComponent(memberIds))
+     })
+    }else if(type == 2){
+      this.setData({
+        type:2,
+        title:'删除成员'
+      })
+    }
+    wx.setNavigationBarTitle({
+      title: this.data.title,
+    })
     this.data.userPhotos.push(app.userInfo.userPhoto)
     /**
      * 创建群聊分析

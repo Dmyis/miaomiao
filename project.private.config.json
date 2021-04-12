@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -83,6 +84,12 @@
         {
           "name": "pages/im/room/room",
           "pathName": "pages/im/room/room",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/childPages/editGroup/editGroup",
+          "pathName": "pages/message/childPages/editGroup/editGroup",
           "scene": null
         }
       ]

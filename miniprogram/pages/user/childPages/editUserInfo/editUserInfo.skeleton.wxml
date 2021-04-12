@@ -1,0 +1,167 @@
+<!--
+此文件为开发者工具生成，生成时间: 2021/4/10 下午6:59:22
+使用方法：
+在 E:\mini-project\miaomiao\miniprogram\pages\user\childPages\editUserInfo\editUserInfo.wxml 引入模板
+
+```
+<import src="editUserInfo.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 E:\mini-project\miaomiao\miniprogram\pages\user\childPages\editUserInfo\editUserInfo.wxss 中引入样式
+```
+@import "./editUserInfo.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="edit">
+      <view class="edit-content">
+        <view class="edit-photo">
+          <view class="photoBox">
+            <image data-url="cloud://miaomiao-4g7cakpsb385f98d.6d69-miaomiao-4g7cakpsb385f98d-1304687795/userPhoto/oz4wN4ymGbBkRmXyBsSpaQG2Qw0o1616773335938.jpg" mode="aspectFill" class="sk-image"></image>
+            <text class="sk-transparent sk-text-18-7500-421 sk-text" style="background-position-x: 50%;">更换头像</text>
+          </view>
+        </view>
+        <view class="edit-userInfo">
+          <view is="components/clickBar/clickBar" data-ipt="哄哄" data-name="名字">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-970 sk-text">名字</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content sk-transparent sk-text-18-7500-32 sk-text">哄哄 </text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="edit-userInfo-item" style="border: none;">
+            <text class="sk-transparent sk-text-18-7500-580 sk-text">性别</text>
+            <view class="userInfo-content">
+              <view range="[&quot;男&quot;,&quot;女&quot;]" class="sk-image">
+                <text class="sk-transparent sk-text-18-7500-971 sk-text">男</text>
+                <text class="iconfont icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+          <view class="edit-userInfo-item" style="border: none;">
+            <text class="sk-transparent sk-text-18-7500-80 sk-text">生日</text>
+            <view class="userInfo-content">
+              <view end="2021-4-10" mode="date" start="1980-1-1" value="1985-01-27" class="sk-image">
+                <text class="sk-transparent sk-text-18-7500-911 sk-text">1985-01-27</text>
+                <text class="iconfont icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent">年龄<text class="remind sk-transparent sk-text-18-7500-340 sk-text">根据生日判断</text></text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content sk-transparent sk-text-18-7500-19 sk-text">36 </text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent">星座<text class="remind sk-transparent sk-text-18-7500-252 sk-text">根据生日判断</text></text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content sk-transparent sk-text-18-7500-549 sk-text">水平座 </text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar" data-ipt="true" data-name="个性签名">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-363 sk-text">个性签名</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content"></text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar" data-ipt="true" data-name="电话号码">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-204 sk-text">电话号码</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content"></text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar" data-ipt="true" data-name="微信号">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-400 sk-text">微信号</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content"></text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar" data-ipt="重庆市,重庆市,渝北区" data-name="所在地">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-673 sk-text">所在地</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content sk-transparent sk-text-18-7500-955 sk-text">重庆市-重庆市-渝北区 </text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view is="components/clickBar/clickBar" data-ipt="true" data-name="邮箱">
+            <view class="clickBar--barSty">
+              <view class="clickBar--bar-box" style="border: none;">
+                <view class="clickBar--bar-left">
+                  <text class="sk-transparent sk-text-18-7500-127 sk-text">邮箱</text>
+                </view>
+                <view class="clickBar--bar-center"></view>
+                <view class="clickBar--bar-right">
+                  <text class="clickBar--content"></text>
+                  <text class="clickBar--iconfont clickBar--icon-youjiantou sk-pseudo sk-pseudo-circle"></text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="edit-model"></view>
+    </view>
+    <view class="sk-loading-spinner">
+      <view class="circular"></view>
+    </view>
+  </view>
+</template>

@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: true,
     userPhoto: '',  //头像
     nickName: '',   //姓名
     phoneNumber: '',   //手机号
@@ -50,6 +51,7 @@ Page({
       weixinNumber, sex, age, birthday,
       detailBgc, constellation, region, mailbox } = userInfo
     this.setData({
+      loading: false,
       userPhoto, nickName, phoneNumber, signature, weixinNumber
       , sex, age, birthday, detailBgc, constellation, region, mailbox
     })
@@ -116,7 +118,7 @@ Page({
         }).then(res => {
           if (res.fileID) {
             db.collection('users').doc(app.userInfo._id).update({
-              data: { 
+              data: {
                 userPhoto: res.fileID
               }
             }).then(res => {
@@ -229,9 +231,9 @@ Page({
         _that.getLocal(res.latitude, res.longitude)
         //保存经纬度
         db.collection('users').doc(app.userInfo._id).update({
-          data:{
-            latitude:res.latitude,
-            longitude:res.longitude
+          data: {
+            latitude: res.latitude,
+            longitude: res.longitude
           }
         })
       },

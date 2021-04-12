@@ -1,0 +1,28 @@
+<!--components/editChatGroup/editChatGroup.wxml-->
+<view class="edit-group-info">
+  <view class="edit-hed">
+    <view class="edit-title">{{title}}</view>
+    <view class="edit-describe">{{describe}}</view>
+    <view class="changs-box">
+
+      <view class="msg-image-box">
+        <view class="msg-image msg-small-box">
+          <block wx:if="{{photo.length<5}}">
+            <image wx:for="{{photo}}" wx:key="index" wx:for-item="iconI" class="groupOne" mode="aspecFill"
+              src="{{iconI}}"></image>
+          </block>
+          <block wx:if="{{photo.length>=5}}">
+            <image wx:for="{{photo}}" wx:key="index" wx:for-item="iconI" class="groupTwo" mode="aspecFill"
+              src="{{iconI}}"></image>
+          </block>
+        </view>
+      </view>
+
+      <input bindblur="updateVal" bindinput="isChangsVal" class="edit-ipt" placeholder="{{value?'':'未定义'}}" focus confirm-type="done"
+        type="text" value="{{value}}" />
+    </view>
+  </view>
+  <view class="edit-footer">
+    <button type="primary" bindtap="handleChangss" disabled="{{!isChangs}}">确定</button>
+  </view>
+</view>
