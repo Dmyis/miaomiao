@@ -31,8 +31,8 @@ Page({
       onGetUserInfo: this.onGetUserInfo,
       getOpenID: this.getOpenID,
       userInfo: app.userInfo,
-      userId:options.userId,
-      userPhoto:options.userPhoto,
+      userId:options.userId || '',
+      userPhoto:options.userPhoto || '',
       chatType:options.chatType,
     })
 
@@ -71,7 +71,7 @@ Page({
     })
   },
   handleMore(){
-    let {chatRoomGroupId,chatType,userPhoto} = this.data
+    let {chatRoomGroupId,chatType} = this.data
     wx.navigateTo({
       url: '../../message/childPages/chatInfo/chatInfo?groupId='+
       chatRoomGroupId+'&chatType='+chatType

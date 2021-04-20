@@ -103,6 +103,10 @@
 .msg-title {
   font-size: 33rpx;
   padding-bottom: 5rpx;
+  width: 550rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .msg-time {

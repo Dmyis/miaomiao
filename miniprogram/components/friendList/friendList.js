@@ -7,12 +7,22 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    showSelect:{
-      type:Boolean,
-      value:false
+    showSelect: {
+      type: Boolean,
+      value: false
     },
-    type:Number,
-    memberIds:Array
+    type: {
+      type: Number,
+      observer(newVal) {
+        if (this.data.type != 9 && this.data.type != 0) {
+          this.getFriendList()
+        }
+      }
+    },  //默认是0:好友列表  1:添加群成员  2:删除群成员
+    memberIds: {
+      type:Array,
+      value:[]
+    }  //群成员id数组
   },
 
   /**
@@ -21,18 +31,18 @@ Component({
   data: {
     friendList: []
   },
-
+  lifetimes:{
+    created(){
+      setTimeout(() => {
+        if(this.data.type == 0){
+          this.getFriendList()
+        }
+      }, 500);
+    }
+  },
   /**
    * 组件的方法列表
    */
-  lifetimes: {
-    attached() {
-      this.getFriendList()
-      setTimeout(() => {
-        console.log(this.data);
-      }, 1000);
-    }
-  },
   methods: {
     getFriendList() {
       db.collection('users').where({
@@ -40,7 +50,7 @@ Component({
       }).field({
         userPhoto: true,
         nickName: true,
-        _openid:true
+        _openid: true
       }).get().then(res => {
         let result = res.data
         //得到好友名的大写首字母
@@ -61,7 +71,7 @@ Component({
             name: item.nickName,
             userPhoto: item.userPhoto,
             _id: item._id,
-            openid:item._openid,
+            openid: item._openid,
             checked: false
           })
         }
@@ -78,20 +88,31 @@ Component({
             subItems: map.get(key)
           })
         }
+        if (this.data.type == 1) {
+          list.forEach(e => {
+            e.subItems.forEach(e2 => {
+              if (this.data.memberIds.includes(e2.openid)) {
+                e2.checked = true
+              }
+            })
+          })
+        }
+
         this.setData({
           friendList: list
         })
         return
       })
     },
-    initList(list){
+    //create.js里使用更新是否选中
+    initList(list) {
       this.setData({
-          friendList:list
+        friendList: list
       })
-  },
-    onChoose(e){
-      let {item} = e.detail
-      this.triggerEvent('chooes',{item:item});
+    },
+    onChoose(e) {
+      let { item } = e.detail
+      this.triggerEvent('chooes', { item: item });
     }
   }
 })

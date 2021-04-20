@@ -85,11 +85,12 @@ Page({
       this.setData({
         groupInfo: res.data[0]
       })
+      //判断单聊还是群聊
       if (this.data.chatType == 1) {
         let chat_members = res.data[0].chat_members.filter(e => e != app.userInfo._openid)
         this.getMemberInfo(chat_members)
       } else if (this.data.chatType == 2) {
-        this.getMemberInfo(res.data[0].chat_member)
+        this.getMemberInfo(res.data[0].chat_members)
       }
     })
   },
@@ -101,8 +102,9 @@ Page({
       nickName: true,
       _openid: true
     }).get().then(res => {
+      //使用_.in()来获取数据会将数据颠倒，下面使用reverse方法恢复
       this.setData({
-        membersMap: res.data,
+        membersMap: res.data.reverse(),
         loading: false
       })
     })
@@ -113,40 +115,38 @@ Page({
       url: '../../../detail/detail?userid=' + id,
     })
   },
-  setGroupName(name){
+  setGroupName(name) {
     this.data.groupInfo.name = name
     this.setData({
-      groupInfo:this.data.groupInfo
+      groupInfo: this.data.groupInfo
     })
   },
   //修改群名
   changeGroupInfo() {
     let groupMaster = this.data.groupInfo._openid
     let userOpenId = app.userInfo._openid
-    if(this.data.membersMap.length>10){
-      if(groupMaster != userOpenId){
-        wx.showModal({
-          confirmText: '知道了',
-          content: '当前群聊人数较多，只有群主或管理员才能修改群名。',
-          showCancel: false,
-          title: '提示',
-        })
-        return
-      }
+    if (groupMaster != userOpenId) {
+      wx.showModal({
+        confirmText: '知道了',
+        content: '只有群主或管理员才能修改群名。',
+        showCancel: false,
+        title: '提示',
+      })
+      return
     }
     let value = ''
-    if(this.data.groupInfo.name){
+    if (this.data.groupInfo.name) {
       value = this.data.groupInfo.name
-    }else{
+    } else {
       value = ""
     }
     let photos = []
-    this.data.membersMap.map(e=>{
+    this.data.membersMap.map(e => {
       photos.push(e.userPhoto)
     })
     wx.navigateTo({
-      url: '../editGroup/editGroup?value='+value+'&groupid='+this.data.groupInfo._id+
-      '&title=修改群聊名称&describe=修改群聊名称后，将在群内通知其他成员。&photo='+photos,
+      url: '../editGroup/editGroup?value=' + value + '&groupid=' + this.data.groupInfo._id +
+        '&title=修改群聊名称&describe=修改群聊名称后，将在群内通知其他成员。&photo=' + photos,
     })
     /**
      * 1.修改群名
@@ -191,19 +191,20 @@ Page({
      */
   },
   //添加群成员
-  clickMemberAdd(){
-    let memberIds = this.data.membersMap.map(e=>e._openid)
+  clickMemberAdd() {
+    let memberIds = this.data.membersMap.map(e => e._openid)
     memberIds = JSON.stringify(memberIds)
     wx.navigateTo({
-      url: '../../../index/childPages/groupChat/create?type=1&groupId='+
-      this.data.groupInfo._id+'&memberIds='+encodeURIComponent(memberIds),
+      url: '../../../index/childPages/groupChat/create?type=1&groupId=' +
+        this.data.groupInfo._id + '&memberIds=' + encodeURIComponent(memberIds),
     })
   },
   //删除群成员
-  clickMemberDelete(){
-    let memberIds = this.data.membersMap.map(e=>e._openid)
+  clickMemberDelete() {
+    let memberIds = this.data.membersMap.map(e => e._openid)
     wx.navigateTo({
-      url: '../../../index/childPages/groupChat/create?type=2&memberIds='+memberIds,
+      url: '../../../index/childPages/groupChat/create?type=2&groupId=' +
+      this.data.groupInfo._id + '&memberIds=' + memberIds,
     })
   }
   /**

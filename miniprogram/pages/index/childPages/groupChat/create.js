@@ -8,33 +8,42 @@ Page({
    */
   data: {
     member: 0,
-    userPhotos:[],
-    title:"发起群聊",
-    type:0, //0:默认值 发起群聊  1:添加群成员  2:删除群成员
-    memberIds:[] //添加群成员是,从群聊页传过来的群成员id
+    userPhotos: [],
+    title: "",
+    groupId: '',
+    type: 9, //0:默认值 发起群聊  1:添加群成员  2:删除群成员
+    memberIds: [], //添加群成员时,从群聊页传过来的群成员id
+    invitees: []   //被邀请者信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let {type,memberIds,groupId} =  options
-    if(type == 1){
-     this.setData({
-       type:1,
-       title:'选择联系人',
-       memberIds:JSON.parse(decodeURIComponent(memberIds))
-     })
-    }else if(type == 2){
+    let { type, memberIds, groupId } = options
+    if (type == 0) {
       this.setData({
-        type:2,
-        title:'删除成员'
+        type: 0,
+        title: '发起群聊'
+      })
+    } else if (type == 1) {
+      this.setData({
+        type: 1,
+        title: '选择联系人',
+        groupId,
+        memberIds: JSON.parse(decodeURIComponent(memberIds))
+      })
+    } else if (type == 2) {
+      this.setData({
+        type: 2,
+        title: '删除成员',
+        groupId,
+        memberIds: JSON.parse(decodeURIComponent(memberIds))
       })
     }
     wx.setNavigationBarTitle({
       title: this.data.title,
     })
-    this.data.userPhotos.push(app.userInfo.userPhoto)
     /**
      * 创建群聊分析
      *  1.创建群聊,区分单聊还是群聊
@@ -116,8 +125,7 @@ Page({
 
   },
   handleSelect(e) {
-    var member = this.data.member
-    var userPhotos =  this.data.userPhotos
+    var { member, userPhotos, invitees } = this.data
     let friendCpn = this.selectComponent('.friendList')
     let list = friendCpn.data.friendList
     let { item, index, subindex } = e.detail.item
@@ -126,26 +134,45 @@ Page({
       subItem.checked = false
       member -= 1
       //取消头像
-      userPhotos = userPhotos.filter(i=>{
-        return i!=subItem.userPhoto
+      userPhotos = userPhotos.filter(i => {
+        return i != subItem.userPhoto
       })
+      //昵称
+      invitees = invitees.filter(i => i != subItem.name)
     } else {
       subItem.checked = true
       member += 1
       //保存头像
       userPhotos.push(subItem.userPhoto)
+      invitees.push(subItem.name)
     }
     //最多9个头像
-    if(userPhotos.length>9){
-      userPhotos = userPhotos.slice(0,10)
+    if (userPhotos.length > 9) {
+      userPhotos = userPhotos.slice(0, 10)
     }
     this.setData({ member })
     this.data.userPhotos = userPhotos
+    this.data.invitees = invitees
     friendCpn.initList(list)
   },
+  //点击完成按钮
   confirm() {
+    let type = this.data.type
+    if (type == 0) {
+      this.createGroup()
+    } else if (type == 1) {
+      this.addGroupMember()
+    } else if (type == 2) {
+      this.deleteGroupMember()
+    }
+  },
+
+  //创建群聊方法
+  createGroup() {
     let ids = []
-    ids.push(app.userInfo._openid)
+    //加上自己
+    ids.unshift(app.userInfo._openid)
+    this.data.userPhotos.unshift(app.userInfo.userPhoto)
     var title = app.userInfo.nickName + '`'
     let friendCpn = this.selectComponent('.friendList')
     friendCpn.data.friendList.forEach(e => {
@@ -161,7 +188,7 @@ Page({
     db.collection('chat_group').add({
       data: {
         type: 2,
-        chat_member: ids
+        chat_members: ids
       }
     }).then(res => {
       let groupId = res._id
@@ -184,13 +211,67 @@ Page({
       })
     })
   },
+  //添加群成员方法
+  addGroupMember() {
+    let ids = this.data.memberIds
+    let friendCpn = this.selectComponent('.friendList')
+    friendCpn.data.friendList.forEach(e => {
+      e.subItems.forEach(item => {
+        if (!ids.includes(item.openid)) {
+          if(item.checked){
+            ids.push(item.openid)
+          }
+        }
+      })
+    });
+    db.collection('chat_group').doc(this.data.groupId).update({
+      data: {
+        chat_members: ids
+      }
+    })
+    let time = new Date()
+    let timeTs = Date.now()
+    const doc = {
+      _id: `${Math.random()}_${timeTs}`,
+      groupId: this.data.groupId,
+      msgType: 'sys',
+      textContent: '邀请' + this.data.invitees.toString() + '加入该群',
+      sendTime: time,
+      sendTimeTS: timeTs, // fallback
+      creatorName: app.userInfo.nickName
+    }
+    db.collection('chat_msg').add({
+      data: doc
+    }).then(res => {
+      db.collection('sys_msg').where({
+        groupId: this.data.groupId
+      }).update({
+        data: {
+          icon: this.data.userPhoto,
+          content: '邀请' + this.data.invitees.toString() + '加入该群',
+          creator: app.userInfo,
+          userIds: ids,
+          time: time,
+          sendTimeTS: timeTs,
+          childType: 'chat_sys'
+        }
+      }).then(res => {
+        wx.navigateBack({
+          delta: 2,
+        })
+      })
+    })
+
+  },
+  //删除群成员方法
+  deleteGroupMember() { },
   addSysMsg(text, time, timeTs, groupId, ids, title) {
     db.collection('sys_msg').add({
       data: {
         type: 2,
         groupId: groupId,
         userIds: ids,
-        icon:this.data.userPhotos,
+        icon: this.data.userPhotos,
         title: title,
         content: text,
         time: time,
@@ -200,10 +281,9 @@ Page({
         childType: 'chat_sys'
       }
     }).then(res => {
-      console.log('add msg success', res);
       wx.navigateTo({
-        url: '../../../im/room/room?nickName' + title +
-          '&groupId=' +groupId + '&chatType=2'
+        url: '../../../im/room/room?nickName=' + title +
+          '&groupId=' + groupId + '&chatType=2'
       })
     })
   },

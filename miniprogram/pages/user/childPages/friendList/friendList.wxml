@@ -1,5 +1,6 @@
 <view>
   <!--miniprogram/pages/user/childPages/friendList/friendList.wxml-->
 
-  <friend-list  bindchooes="handleNav" />
+  <friendList class="friendList" type="0" bindchooes="handleNav"/>
+
 </view>

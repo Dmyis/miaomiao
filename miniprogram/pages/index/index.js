@@ -140,7 +140,7 @@ Page({
     if (index == 0) {
       //发起群聊
       wx.navigateTo({
-        url: './childPages/groupChat/create',
+        url: './childPages/groupChat/create?type=0',
       })
     } else if (index == 1) {
       wx.navigateTo({

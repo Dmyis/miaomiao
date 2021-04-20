@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "friend-list":"../../../../components/friendList/friendList"
+    "friendList":"../../../../components/friendList/friendList"
   },
   "navigationBarTitleText": "好友列表"
 }

@@ -23,6 +23,6 @@
     </view>
   </view>
   <view class="edit-footer">
-    <button type="primary" bindtap="handleChangss" disabled="{{!isChangs}}">确定</button>
+    <button type="primary" bindtap="handleChangs" disabled="{{isChangs}}">确定</button>
   </view>
 </view>

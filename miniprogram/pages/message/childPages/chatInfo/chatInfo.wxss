@@ -31,7 +31,7 @@
   border: 5rpx #999 dashed;
 }
 .user-nickName{
-  width: 80rpx;
+  width: 100rpx;
   height: 45rpx;
   text-align: center;
   white-space: nowrap;

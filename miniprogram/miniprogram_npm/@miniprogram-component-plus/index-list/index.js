@@ -169,10 +169,14 @@ Component({
         _anchorItemH: 0,
         _anchorItemW: 0,
         _anchorTop: 0,
-        _listUpperBound: 0
+        _listUpperBound: 0,
+        isChacks:[]
     },
     lifetimes: {
         created() {
+            setTimeout(() => {
+                this.computeChack()
+            }, 500);
         },
         attached: function attached() {
             this.__scrollTo = throttle(this._scrollTo, 100, {});
@@ -246,6 +250,12 @@ Component({
             }
             if (!current) current = alphabet[alphabet.length - 1];
             this.setData({ current: current });
+        },
+        computeChack() {
+            let list = [...this.data.list]
+            this.setData({
+                isChacks: list
+            })
         }
     }
 });

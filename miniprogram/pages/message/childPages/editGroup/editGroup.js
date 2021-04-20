@@ -1,5 +1,6 @@
 // miniprogram/pages/message/childPages/editGroup/editGroup.js
 const db = wx.cloud.database()
+const app = getApp()
 Page({
 
   /**
@@ -79,13 +80,15 @@ Page({
     db.collection('chat_group').where({
       _id: this.data.groupid
     }).update({
-      data: {
-        name: val
+      data:{
+        name:val
       }
-    }).then(res => {
-      if (res.stats.updated == 1) {
+    }).then(res=>{
+      if(res.stats.updated == 1){
         this.sendChatMsg(val)
       }
+    }).catch(err=>{
+      console.log(err);
     })
   },
   sendChatMsg(name) {
@@ -103,22 +106,24 @@ Page({
     db.collection('chat_msg').add({
       data: doc
     }).then(res => {
-      this.updateSysMsg('修改群名为"'+this.data.value+'"',time,timeTs)
+      console.log(res);
+      this.updateSysMsg('修改群名为"' + this.data.value + '"', time, timeTs)
     })
   },
   updateSysMsg(text, time, timeTs) {
     db.collection('sys_msg').where({
-      type:2,
+      type: 2,
       groupId: this.data.groupid
     }).update({
       data: {
-        title:this.data.value,
+        title: this.data.value,
         content: text,
         time: time,
         sendTimeTS: timeTs,
-        childType: 'chat_sys'
+        childType: 'chat_sys',
+        creator:app.userInfo
       }
-    }).then(res=>{
+    }).then(res => {
       wx.hideLoading({})
       const pages = getCurrentPages()
       //群信息页

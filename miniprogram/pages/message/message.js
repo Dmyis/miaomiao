@@ -3,6 +3,7 @@ const app = getApp()
 const db = wx.cloud.database()
 const _ = db.command
 var watcher = null
+var userWatch = null
 import msgTime from "../../utils/msgTime";
 Page({
   /**
@@ -103,6 +104,10 @@ Page({
     if (watcher != null) {
       watcher.close()
     }
+    if (userWatch != null) {
+      userWatch.close()
+    }
+
   },
 
   /**
@@ -212,10 +217,12 @@ Page({
           messageList: res.data
         })
         //开始监听消息
-        this.initWatch()
+        this.initMsgWatch()
+        //监听好友聊天之间的头像昵称改变
+        this.initUserWatch()
       })
   },
-  initWatch() {
+  initMsgWatch() {
     let timeTS = Date.now()
     if (this.data.messageList.length > 0) {
       timeTS = this.data.messageList[0].sendTimeTS
@@ -228,7 +235,6 @@ Page({
       })
       .watch({
         onChange: snapshot => {
-          console.log(snapshot);
           const msgs = [...this.data.messageList]
           for (const docChange of snapshot.docChanges) {
             switch (docChange.dataType) {
@@ -252,7 +258,7 @@ Page({
                   msg.title = title
                 }
                 if (msg.type == 2) {
-                  //如果时群聊
+                  //如果是群聊
                   let content = msg.content
                   if (msg.creator._openid == app.userInfo._openid) {
                     //如果发起群聊的是自己
@@ -267,6 +273,7 @@ Page({
                     }
                     content = str + content
                   }
+
                   msg.content = content
                 }
                 if (ind > -1) {
@@ -286,5 +293,58 @@ Page({
           console.log(err);
         }
       })
+  },
+  //监听用户更换头像等
+  initUserWatch() {
+    //监听头像更改
+    userWatch = db.collection('users')
+      .watch({
+        onChange: snapshot => {
+          this.userInfoWatch(snapshot.docChanges)
+        },
+        onError: err => {
+          console.log(err);
+        }
+      })
+  },
+  userInfoWatch(update) {
+    let list = this.data.messageList
+    list.forEach(e => {
+      if (e.type == 1) {
+        let users = e.users
+        if (e.users[0]._openid == app.userInfo._openid) {
+          update.forEach(item => {
+            if (item.doc._openid == e.users[1]._openid) {
+              e.title = item.doc.nickName
+              e.icon = item.doc.userPhoto
+              users[1].userNickName = item.doc.nickName
+              users[1].userPhoto = item.doc.userPhoto
+              db.collection('sys_msg').where({
+                groupId: e.groupId
+              }).update({
+                data: { users }
+              })
+            }
+          })
+        } else {
+          update.forEach(item => {
+            if (item.doc._openid == e.users[0]._openid) {
+              e.title = item.doc.nickName
+              e.icon = item.doc.userPhoto
+              users[0].userNickName = item.doc.nickName
+              users[0].userPhoto = item.doc.userPhoto
+              db.collection('sys_msg').where({
+                groupId: e.groupId
+              }).update({
+                data: { users }
+              })
+            }
+          })
+        }
+      }
+    })
+    this.setData({
+      messageList: list
+    })
   }
 })
